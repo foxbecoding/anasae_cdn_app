@@ -1,4 +1,4 @@
-import express, { Express, Request, Response, Router } from 'express'
+import { Request, Response, Router } from 'express'
 
 export const defaultRoute = Router()
 
