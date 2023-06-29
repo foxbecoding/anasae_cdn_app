@@ -8,9 +8,12 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const routes_1 = require("./routes");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-const port = process.env.PORT || 6000;
+const env = process.env;
+const port = process.env.PORT || 3058;
+const MEDIA_ROOT = env.NODE_ENV === 'development' ? env.MEDIA_ROOT_DEV : env.MEDIA_ROOT_PRO;
 // routes
 app.use('/', routes_1.routes);
+app.use(express_1.default.static(`${MEDIA_ROOT}`));
 app.listen(port, () => {
     console.log(`[server]: Server is running at http://localhost:${port}`);
 });

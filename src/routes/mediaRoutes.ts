@@ -1,9 +1,10 @@
 import express, { Express, Request, Response } from 'express'
 
-const app: Express = express();
+export const mediaRoute = express.Router();
 
-app.get('/assets/:file', (req: Request, res: Response) => {
-    // Handle the static asset request here
+mediaRoute.get('/media/:file', (req: Request, res: Response) => {
+    // console.log(req.body)
+    // res.send()
 })
 
 // app.get('/', (req: Request, res: Response) => {
