@@ -4,5 +4,5 @@ exports.defaultRoute = void 0;
 const express_1 = require("express");
 exports.defaultRoute = (0, express_1.Router)();
 exports.defaultRoute.get('/', (req, res) => {
-    res.send("What's up doc ?!");
+    res.send("ANASAE NOW");
 });
