@@ -8,6 +8,3 @@ const express_1 = __importDefault(require("express"));
 const mediaControllers_1 = require("../Controllers/mediaControllers");
 exports.mediaRoute = express_1.default.Router();
 exports.mediaRoute.post('/add-image/', mediaControllers_1.AddImage);
-// app.get('/', (req: Request, res: Response) => {
-//     res.send('Express + TypeScript Server')
-// });
