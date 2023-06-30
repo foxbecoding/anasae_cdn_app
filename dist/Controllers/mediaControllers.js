@@ -10,10 +10,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AddImage = void 0;
-const AddImage = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const AddImage = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const file = req.file;
-    console.log(file);
-    // res.send(file)
-    res.json({ message: "Uploaded" });
+    console.log(req.body.file_path);
+    if (!file) {
+        const error = new Error('Please upload a file');
+        error.httpStatusCode = 400;
+        return next(error);
+    }
+    res.send(file);
+    // res.json({message: "Uploaded"}); 
 });
 exports.AddImage = AddImage;

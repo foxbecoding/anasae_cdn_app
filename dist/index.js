@@ -10,10 +10,10 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 const env = process.env;
 const port = process.env.PORT || 3058;
-const MEDIA_ROOT = env.NODE_ENV === 'development' ? env.MEDIA_ROOT_DEV : env.MEDIA_ROOT_PRO;
+const media_root = env.NODE_ENV === 'development' ? env.MEDIA_ROOT_DEV : env.MEDIA_ROOT_PRO;
 // routes
 app.use('/', routes_1.routes);
-app.use(express_1.default.static(`${MEDIA_ROOT}`));
+app.use(express_1.default.static(`${media_root}`));
 app.listen(port, () => {
     console.log(`[server]: Server is running at http://127.0.0.1:${port}`);
 });
