@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
 
-export const AddImageController = async (req:Request, res: Response): Promise<void> => {
-    console.log('FOX')
+export const AddImage = async (req:Request, res: Response): Promise<void> => {
+    res.json({message: "POST new tea"}); 
 }
