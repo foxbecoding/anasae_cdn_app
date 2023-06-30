@@ -15,5 +15,5 @@ const MEDIA_ROOT = env.NODE_ENV === 'development' ? env.MEDIA_ROOT_DEV : env.MED
 app.use('/', routes_1.routes);
 app.use(express_1.default.static(`${MEDIA_ROOT}`));
 app.listen(port, () => {
-    console.log(`[server]: Server is running at http://localhost:${port}`);
+    console.log(`[server]: Server is running at http://127.0.0.1:${port}`);
 });
