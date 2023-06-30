@@ -1,13 +1,12 @@
-import { Request, Response } from 'express'
+import { Request } from 'express'
 import multer  from 'multer'
-// const multer = require('multer')
 
 // SET STORAGE
 var storage = multer.diskStorage({
-    destination: function (req: Request, file: any, cb: any) {
-      cb(null, 'uploads')
+    destination: (req: Request, file: any, cb: any) => {
+      cb(null, '../public/media/')
     },
-    filename: function (req: Request, file: any, cb: any) {
+    filename: (req: Request, file: any, cb: any) => {
       cb(null, file.fieldname + '-' + Date.now())
     }
 })

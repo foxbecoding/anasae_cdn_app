@@ -11,7 +11,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AddImage = void 0;
 const AddImage = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(req.body);
-    res.json({ message: "POST new tea" });
+    const file = req.file;
+    console.log(file);
+    // res.send(file)
+    res.json({ message: "Uploaded" });
 });
 exports.AddImage = AddImage;
