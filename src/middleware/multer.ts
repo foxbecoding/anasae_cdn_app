@@ -26,6 +26,4 @@ const config = {
     }
 }
 
-
-
 export const upload = multer(config)
