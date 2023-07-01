@@ -8,7 +8,6 @@ const cors_1 = __importDefault(require("cors"));
 const express_1 = __importDefault(require("express"));
 const mediaController_1 = require("../Controllers/mediaController");
 const multer_1 = require("../middleware/multer");
-const permissions_1 = require("../middleware/permissions");
 const cors_2 = require("../middleware/cors");
 exports.mediaRoute = express_1.default.Router();
-exports.mediaRoute.post('/add-image/', (0, cors_1.default)(cors_2.corsOptionsDelegate), multer_1.upload.single('image'), permissions_1.mediaPermissions, mediaController_1.AddImage);
+exports.mediaRoute.post('/add-image/', (0, cors_1.default)(cors_2.corsOptionsDelegate), multer_1.upload.single('image'), mediaController_1.AddImage);

@@ -9,14 +9,22 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const env = process.env;
 const media_root = env.NODE_ENV === 'development' ? env.MEDIA_ROOT_DEV : env.MEDIA_ROOT_PRO;
-// SET STORAGE
-var storage = multer_1.default.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, media_root + req.body.file_path);
-    },
-    filename: (req, file, cb) => {
-        const ext = '.' + file.mimetype.split('/')[1];
-        cb(null, Date.now() + ext);
+const config = {
+    storage: multer_1.default.diskStorage({
+        destination: (req, file, cb) => {
+            cb(null, media_root + req.body.file_path);
+        },
+        filename: (req, file, cb) => {
+            const ext = '.' + file.mimetype.split('/')[1];
+            cb(null, Date.now() + ext);
+        }
+    }),
+    fileFilter: (req, file, cb) => {
+        if (!req.body.file_path) {
+            const error = new Error('Please specify file path');
+            cb(error);
+        }
+        cb(null, true);
     }
-});
-exports.upload = (0, multer_1.default)({ storage: storage });
+};
+exports.upload = (0, multer_1.default)(config);

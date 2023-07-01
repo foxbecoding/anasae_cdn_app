@@ -11,12 +11,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mediaPermissions = void 0;
 const mediaPermissions = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(req.method);
-    // if (!file) {
-    //     const error: any  = new Error('Please upload a file')
-    //     error.httpStatusCode = 400
-    //     return next(error)
-    // }
+    const file = req.file;
+    if (!file) {
+        const error = new Error('Please upload a file');
+        error.httpStatusCode = 400;
+        return next(error);
+    }
+    if (!req.body.file_path) {
+    }
     return next();
 });
 exports.mediaPermissions = mediaPermissions;
