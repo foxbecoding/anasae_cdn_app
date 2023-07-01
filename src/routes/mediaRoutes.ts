@@ -7,7 +7,7 @@ import { corsOptionsDelegate } from '../middleware/cors'
 export const mediaRoute = express.Router()
 
 mediaRoute.post(
-    '/add-image/', 
+    '/upload-image/', 
     cors(corsOptionsDelegate), 
     upload.single('image'), 
     AddImage,
