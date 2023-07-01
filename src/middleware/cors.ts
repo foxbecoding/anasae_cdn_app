@@ -1,4 +1,4 @@
-const allowlist = ['127.0.0.1:3058']
+const allowlist = ['127.0.0.1:3058', '127.0.0.1:8000', 'localhost']
 
 export const corsOptionsDelegate = (req: any, callback: Function) => {
     req.headers.origin = req.headers.origin || req.headers.host
