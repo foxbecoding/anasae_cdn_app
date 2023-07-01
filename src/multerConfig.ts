@@ -1,5 +1,5 @@
 import { Request, Express } from 'express'
-import multer, { Multer }  from 'multer'
+import multer  from 'multer'
 import dotenv from 'dotenv'
 
 dotenv.config()
