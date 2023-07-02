@@ -12,8 +12,7 @@ const config = {
             cb(null, media_root+req.body.file_path)
         },
         filename: (req: Request, file: Express.Multer.File, cb: Function) => {
-            const ext: string = '.'+file.mimetype.split('/')[1]
-            cb(null, Date.now()+ext)
+            cb(null, req.body.image_name)
         }
     }),
 

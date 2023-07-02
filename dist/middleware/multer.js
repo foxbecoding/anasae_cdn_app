@@ -15,8 +15,7 @@ const config = {
             cb(null, media_root + req.body.file_path);
         },
         filename: (req, file, cb) => {
-            const ext = '.' + file.mimetype.split('/')[1];
-            cb(null, Date.now() + ext);
+            cb(null, req.body.image_name);
         }
     }),
     fileFilter: (req, file, cb) => {
