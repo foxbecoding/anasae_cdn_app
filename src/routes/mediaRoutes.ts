@@ -12,3 +12,10 @@ mediaRoute.post(
     upload.single('image'), 
     AddImage,
 )
+
+mediaRoute.post(
+    '/upload-multi-image/', 
+    cors(corsOptionsDelegate), 
+    upload.array('images'), 
+    AddImage,
+)

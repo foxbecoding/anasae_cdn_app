@@ -11,3 +11,4 @@ const multer_1 = require("../middleware/multer");
 const cors_2 = require("../middleware/cors");
 exports.mediaRoute = express_1.default.Router();
 exports.mediaRoute.post('/upload-image/', (0, cors_1.default)(cors_2.corsOptionsDelegate), multer_1.upload.single('image'), mediaController_1.AddImage);
+exports.mediaRoute.post('/upload-multi-image/', (0, cors_1.default)(cors_2.corsOptionsDelegate), multer_1.upload.array('images'), mediaController_1.AddImage);
