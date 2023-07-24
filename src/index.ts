@@ -22,5 +22,4 @@ app.use(express.static(`${media_root}`))
 server.listen(port, host);
 server.on('listening', function() {
     console.log('Express server started on port %s at %s', server.address().port, server.address().address);
-});
-
+})
