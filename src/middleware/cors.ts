@@ -1,7 +1,8 @@
 const allowlist = [
     '127.0.0.1:3058', 
     '127.0.0.1:8000', 
-    '192.168.1.235:3058'
+    '192.168.1.235:3058',
+    'anasae.local'
 ]
 
 export const corsOptionsDelegate = (req: any, callback: Function) => {
