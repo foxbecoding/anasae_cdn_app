@@ -5,7 +5,8 @@ const allowlist = [
     '127.0.0.1:3058',
     '127.0.0.1:8000',
     '192.168.1.235:3058',
-    'anasae.local'
+    'anasae.local',
+    '127.0.0.1:62393'
 ];
 const corsOptionsDelegate = (req, callback) => {
     req.headers.origin = req.headers.origin || req.headers.host;
