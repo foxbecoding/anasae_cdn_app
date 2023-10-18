@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.corsOptionsDelegate = void 0;
+const env = process.env;
 const allowlist = [
-    '127.0.0.1:3058',
-    '127.0.0.1:8000',
-    '192.168.1.235:3058',
-    'anasae.local'
+    `${env.ALLOWED_HOST1}`,
+    `${env.ALLOWED_HOST2}`,
+    `${env.ALLOWED_HOST3}`,
+    `${env.ALLOWED_HOST4}`
 ];
 const corsOptionsDelegate = (req, callback) => {
     req.headers.origin = req.headers.origin || req.headers.host;

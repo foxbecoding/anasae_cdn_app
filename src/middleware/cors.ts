@@ -1,8 +1,13 @@
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+const env: NodeJS.ProcessEnv = process.env
 const allowlist = [
-    '127.0.0.1:3058', 
-    '127.0.0.1:8000', 
-    '192.168.1.235:3058',
-    'anasae.local'
+    `${env.ALLOWED_HOST1}`, 
+    `${env.ALLOWED_HOST2}`, 
+    `${env.ALLOWED_HOST3}`,
+    `${env.ALLOWED_HOST4}`
 ]
 
 export const corsOptionsDelegate = (req: any, callback: Function) => {
